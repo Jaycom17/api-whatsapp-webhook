@@ -32,3 +32,5 @@ export const config = {
   initialRetryDelay: 2000,
   reconnectDelay: 5000,
 };
+
+console.log(config)
