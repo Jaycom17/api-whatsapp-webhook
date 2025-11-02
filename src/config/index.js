@@ -2,10 +2,14 @@
  * Configuración centralizada de la aplicación
  * Todas las variables de entorno y constantes se definen aquí
  */
-import dotenv from "dotenv";
+const fs = require('fs');
+if (fs.existsSync('.env')) {
+  require('dotenv').config();
+  console.log('📄 Dotenv: Cargando desde archivo .env');
+} else {
+  console.log('🐳 Docker: Usando variables de entorno del sistema');
+}
 
-// Cargar variables de entorno desde .env
-dotenv.config();
 
 export const config = {
   // RabbitMQ
